@@ -18,7 +18,7 @@ const ANNOUNCEMENTS: Announcement[] = [
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     date: "12 Février 2026",
     time: "09:00",
-    image: "src/assets/images/consulat-liban-marseille.jpg",
+    image: "@/src/assets/images/consulat-liban-marseille.jpg",
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const ANNOUNCEMENTS: Announcement[] = [
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     date: "01 Mars 2026",
     time: "08:30",
-    image: "src/assets/images/consulat-liban-marseille.jpg",
+    image: "@/src/assets/images/consulat-liban-marseille.jpg",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const ANNOUNCEMENTS: Announcement[] = [
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     date: "20 Mars 2026",
     time: "10:00",
-    image: "src/assets/images/consulat-liban-marseille.jpg",
+    image: "@/src/assets/images/consulat-liban-marseille.jpg",
   },
 ];
 

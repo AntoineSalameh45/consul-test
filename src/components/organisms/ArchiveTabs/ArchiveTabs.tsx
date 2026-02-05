@@ -82,7 +82,7 @@ export default function VerticalTabs() {
         </Tabs>
         <TabPanel value={value} index={0}>
           Mme Sonia ABOU AZAR
-          <img src="src\assets\images\archives\Sonia-ABOU-AZAR.jpg" />
+          <img src="@/src/assets/images/archives/Sonia-ABOU-AZAR.jpg" />
         </TabPanel>
         <TabPanel value={value} index={1}>
           Mme Hala KEYROUZ
