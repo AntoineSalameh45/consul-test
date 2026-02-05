@@ -179,7 +179,7 @@ const About = () => {
       {/* Anthem Section */}
       <section
         id="hymne-national"
-        className="min-h-screen flex items-center justify-center pt-20 pb-40 text-white mb-10"
+        className="min-h-screen flex items-center justify-center pt-20 pb-40 text-white"
       >
         <div className="container mx-auto px-4 py-12">
           <h2 className="font-semibold mb-4">Hymne National du Liban:</h2>
