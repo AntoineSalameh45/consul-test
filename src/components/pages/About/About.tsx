@@ -55,7 +55,7 @@ const About = () => {
   return (
     <main className="w-full">
       {/* Hero Section */}
-      <section className="min-h-screen relative text-white">
+      <section className="min-h-screen relative text-white mb-10">
         {/* Content */}
         <div className="bg-[url('/src/assets/images/consulat-liban-marseille.jpg')] bg-cover bg-center">
           <div className="relative container mx-auto px-4 py-16 bg-black/60 text-white">
@@ -129,7 +129,7 @@ const About = () => {
       {/* Active Consulate section */}
       <section
         id="active-consulate"
-        className="bg-white min-h-screen flex items-center justify-center pt-20 pb-40 text-black"
+        className="bg-white min-h-screen flex items-center justify-center pt-20 pb-40 text-black mb-10"
       >
         <div className="container mx-auto px-4 py-12">
           <h2>Consul Générale Present (2026-):</h2>
@@ -153,7 +153,7 @@ const About = () => {
       {/* Holidays Calendar Section */}
       <section
         id="holidays-calendar"
-        className="min-h-screen flex items-center justify-center pt-20 pb-40 text-white"
+        className="min-h-screen flex items-center justify-center pt-20 pb-40 text-white mb-10"
       >
         <div className="container mx-auto px-4 py-12">
           <h2 className="font-semibold">Calendrier des fêtes:</h2>
@@ -169,7 +169,7 @@ const About = () => {
       {/* Archive Tabs Section */}
       <section
         id="archives"
-        className="bg-white min-h-screen flex items-center justify-center pt-20 pb-40 text-black"
+        className="bg-white min-h-screen flex items-center justify-center pt-20 pb-40 text-black mb-10"
       >
         <div className="container mx-auto px-4 py-12">
           <ArchiveTabs />
@@ -179,7 +179,7 @@ const About = () => {
       {/* Anthem Section */}
       <section
         id="hymne-national"
-        className="min-h-screen flex items-center justify-center pt-20 pb-40 text-white"
+        className="min-h-screen flex items-center justify-center pt-20 pb-40 text-white mb-10"
       >
         <div className="container mx-auto px-4 py-12">
           <h2 className="font-semibold mb-4">Hymne National du Liban:</h2>
