@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@keyframes slide-progress {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
