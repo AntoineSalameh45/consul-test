@@ -1,0 +1,1 @@
+export {default as ConsuleSoniaAAzar} from './Sonia-ABOU-AZAR.jpg'

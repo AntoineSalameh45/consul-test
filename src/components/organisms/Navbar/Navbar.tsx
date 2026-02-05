@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { LebanonFlag } from "../../../assets/images";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +29,7 @@ const Navbar = () => {
           {/* Logo + Title */}
           <div className="flex gap-2 items-center">
             <img
-              src="@/src/assets/images/flag-lebanon-comp.jpg"
+              src={LebanonFlag}
               className="h-14 sm:h-16"
               alt="Lebanon Flag"
             />

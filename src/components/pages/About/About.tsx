@@ -1,6 +1,7 @@
 import { AnthemTabs } from "../../organisms/AnthemTabs";
 import { ArchiveTabs } from "../../organisms/ArchiveTabs";
 import { HolidaysCalendar } from "../../organisms/HolidaysCalendar";
+import { MapGif } from "../../../assets/images";
 
 const departments = [
   "Ain",
@@ -102,7 +103,7 @@ const About = () => {
           </div>
         </div>
         <div className="flex justify-self-center">
-          <img src="@/src/assets/images/myVisitedPlaces.gif" className="h-auto" />
+          <img src={MapGif} className="h-auto" />
         </div>
         <div className="items-center justify-center mt-8 px-18">
           <div className="md:hidden container p-2 space-y-2 text-left mt-4 bg-white text-blue-950 rounded-2xl">
@@ -133,7 +134,7 @@ const About = () => {
         <div className="container mx-auto px-4 py-12">
           <h2>Consul Générale Present (2026-):</h2>
           <img
-            src="@/src/assets/images/consul-mattar.jpg"
+            src="src/assets/images/consul-mattar.jpg"
             alt="Consul Générale Present"
           />
           <h3>Ralph MATTAR</h3>

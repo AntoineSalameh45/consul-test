@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SlideProgress } from "../../atoms/SlideProgress";
+import { ConsulatBuilding } from "../../../assets/images";
 
 type Announcement = {
   id: number;
@@ -18,7 +19,7 @@ const ANNOUNCEMENTS: Announcement[] = [
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     date: "12 Février 2026",
     time: "09:00",
-    image: "@/src/assets/images/consulat-liban-marseille.jpg",
+    image: ConsulatBuilding,
   },
   {
     id: 2,
@@ -26,7 +27,7 @@ const ANNOUNCEMENTS: Announcement[] = [
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     date: "01 Mars 2026",
     time: "08:30",
-    image: "@/src/assets/images/consulat-liban-marseille.jpg",
+    image: ConsulatBuilding,
   },
   {
     id: 3,
@@ -34,7 +35,7 @@ const ANNOUNCEMENTS: Announcement[] = [
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     date: "20 Mars 2026",
     time: "10:00",
-    image: "@/src/assets/images/consulat-liban-marseille.jpg",
+    image: ConsulatBuilding,
   },
 ];
 

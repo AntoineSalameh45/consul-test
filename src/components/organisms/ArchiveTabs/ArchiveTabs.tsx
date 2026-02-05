@@ -3,6 +3,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import { ConsuleSoniaAAzar } from "../../../assets/images/archives";
 
 interface iTabPanelProps {
   children?: React.ReactNode;
@@ -82,7 +83,7 @@ export default function VerticalTabs() {
         </Tabs>
         <TabPanel value={value} index={0}>
           Mme Sonia ABOU AZAR
-          <img src="@/src/assets/images/archives/Sonia-ABOU-AZAR.jpg" />
+          <img src={ConsuleSoniaAAzar} alt="Sonia ABOU AZAR" />
         </TabPanel>
         <TabPanel value={value} index={1}>
           Mme Hala KEYROUZ
