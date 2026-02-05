@@ -102,7 +102,7 @@ const About = () => {
           </div>
         </div>
         <div className="flex justify-self-center">
-          <img src="src\assets\images\myVisitedPlaces.gif" className="h-auto" />
+          <img src="src/assets/images/myVisitedPlaces.gif" className="h-auto" />
         </div>
         <div className="items-center justify-center mt-8 px-18">
           <div className="md:hidden container p-2 space-y-2 text-left mt-4 bg-white text-blue-950 rounded-2xl">
