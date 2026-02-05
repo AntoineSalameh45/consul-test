@@ -19,13 +19,18 @@ const About = React.lazy(() =>
     default: module.About,
   })),
 );
-// const PageNotFound = React.lazy(() =>
-//   import("../components/pages/PageNotFound").then((module) => ({
-//     default: module.PageNotFound,
-//   }))
-// );
+const Services = React.lazy(() =>
+  import("../components/pages/Services").then((module) => ({
+    default: module.Services,
+  })),
+);
+const NotFound = React.lazy(() =>
+  import("../components/pages/NotFound").then((module) => ({
+    default: module.NotFound,
+  }))
+);
 
-const Routes = () => {
+function Routes() {
   const router = useMemo(() => {
     return createBrowserRouter(
       createRoutesFromElements(
@@ -33,10 +38,11 @@ const Routes = () => {
           <Route element={<SharedLayout />}>
             <Route path={routeNames.home} element={<Home />} />
             <Route path={routeNames.about} element={<About />} />
-            {/* <Route path={routeNames.pagenotfound} element={<PageNotFound />} /> */}
+            <Route path={routeNames.services} element={<Services />} />
+            <Route path={routeNames.notfound} element={<NotFound />} />
           </Route>
-        </Route>,
-      ),
+        </Route>
+      )
     );
   }, []);
 
@@ -45,6 +51,6 @@ const Routes = () => {
       <RouterProvider router={router} />
     </Suspense>
   );
-};
+}
 
 export { Routes };

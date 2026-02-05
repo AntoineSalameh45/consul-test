@@ -48,7 +48,9 @@ const Navbar = () => {
             <li className="hover:underline">
               <Link to="/a-propos">Le Consulat</Link>
             </li>
-            <li className="hover:underline">Services aux Citoyens</li>
+            <li className="hover:underline">
+              <Link to="/services-consulaires">Services aux Citoyens</Link>
+            </li>
             <li className="hover:underline">Actualités</li>
             <li className="hover:underline">Le Liban</li>
             <li className="hover:underline">Liens</li>
@@ -82,7 +84,11 @@ const Navbar = () => {
                 Le Consulat
               </Link>
             </li>
-            <li>Services aux Citoyens</li>
+            <li>
+              <Link to="/services-consulaires" onClick={() => setIsOpen(false)}>
+                Services Consulaires
+              </Link>
+            </li>
             <li>Actualités</li>
             <li>Découvrir le Liban</li>
             <li>Liens Utiles</li>

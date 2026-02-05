@@ -1,7 +1,9 @@
 const routeNames = {
     home: "/",
     about: "/a-propos",
-    pagenotfound: "*",
+    services: "/services-consulaires",
+    contact: "/contact",
+    notfound: "*",
   };
   
   export { routeNames };
