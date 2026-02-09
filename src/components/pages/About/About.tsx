@@ -3,7 +3,6 @@ import { ArchiveTabs } from "../../organisms/ArchiveTabs";
 import { HolidaysCalendar } from "../../organisms/HolidaysCalendar";
 import { MapGif, ConsulMatar } from "../../../assets/images";
 
-
 const departments = [
   "Ain",
   "Allier",
@@ -133,33 +132,56 @@ const About = () => {
         className="bg-white min-h-screen flex items-center justify-center pt-20 pb-40 text-black mb-10"
       >
         <div className="container mx-auto px-4 py-12">
-          <h2>Consul Général Present (2026-):</h2>
-          <img
-            src={ConsulMatar}
-            alt="Consul M. Ralph Matar"
-          />
-          <h3 className="my-4">M. Ralph MATAR</h3>
-          <p className="text-gray-600">
-            C’est un honneur et un privilège de rejoindre la formidable équipe
-            du Consulat Général du Liban à Marseille en tant que nouveau Consul
-            Général.
-            <br /><br />
-            Dans la lignée de mes illustres prédécesseurs, je serai à votre
-            écoute afin de mieux vous servir dans le cadre des règles fixées par
-            la loi et par la réglementation en vigueur. Ma mission consistera à
-            promouvoir la douce puissance du Liban, sa culture et le génie
-            libanais, qui se reflètent dans la vitalité de sa diaspora,
-            illustrée dans tous les secteurs de la société et de l’économie
-            française.
-            <br /><br />
-            Malgré toutes les tragédies qui ont ébranlé notre cher pays, le
-            Liban demeure un précurseur des Lumières, porté par ses penseurs,
-            ainsi que par l’espoir et la détermination de son peuple à survivre
-            à l’adversité, à surmonter les épreuves et à préserver une capacité
-            d’initiative qui ne s’éteint jamais.
-            <br /><br />
-            Servons ensemble cette idée du Liban, la seule qui compte.
-          </p>
+          <h2 className="text-2xl font-semibold mb-8">
+            Consul Général Présent (2026–)
+          </h2>
+
+          <div className="flex flex-col md:flex-row gap-10 items-start">
+            {/* Framed Image */}
+            <div className="w-full md:w-1/3">
+              <div className="bg-[#f4f7fb] rounded-xl p-5 shadow-md">
+                <div className="bg-white rounded-lg overflow-hidden">
+                  <img
+                    src={ConsulMatar}
+                    alt="Consul M. Ralph Matar"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
+
+              <h3 className="mt-4 text-lg font-semibold text-center">
+                M. Ralph MATAR
+              </h3>
+            </div>
+
+            {/* Text */}
+            <div className="w-full md:w-2/3">
+              <p className="text-gray-600 leading-relaxed">
+                C’est un honneur et un privilège de rejoindre la formidable
+                équipe du Consulat Général du Liban à Marseille en tant que
+                nouveau Consul Général.
+                <br />
+                <br />
+                Dans la lignée de mes illustres prédécesseurs, je serai à votre
+                écoute afin de mieux vous servir dans le cadre des règles fixées
+                par la loi et par la réglementation en vigueur. Ma mission
+                consistera à promouvoir la douce puissance du Liban, sa culture
+                et le génie libanais, qui se reflètent dans la vitalité de sa
+                diaspora, illustrée dans tous les secteurs de la société et de
+                l’économie française.
+                <br />
+                <br />
+                Malgré toutes les tragédies qui ont ébranlé notre cher pays, le
+                Liban demeure un précurseur des Lumières, porté par ses
+                penseurs, ainsi que par l’espoir et la détermination de son
+                peuple à survivre à l’adversité, à surmonter les épreuves et à
+                préserver une capacité d’initiative qui ne s’éteint jamais.
+                <br />
+                <br />
+                Servons ensemble cette idée du Liban, la seule qui compte.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
