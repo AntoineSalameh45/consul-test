@@ -22,12 +22,12 @@ const Home = () => {
       icon: PassportIcon,
     },
     {
-      label: "Visas & Légalisation",
+      label: "Procuration & Légalisation",
       icon: VisaIcon,
     },
     {
-      label: "Services aux Citoyens",
-      icon: PassportIcon,
+      label: "Certificats & Traductions",
+      icon: PaperworkIcon,
     },
     {
       label: "Affaires Administratives",

@@ -1,76 +1,78 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SlideProgress } from "../../atoms/SlideProgress";
-import { ConsulatBuilding } from "../../../assets/images";
-import { AnnonceStMaroun } from "../../../assets/images/annonces";
-
-type Announcement = {
-  id: number;
-  title: string;
-  text: string;
-  date: string;
-  time: string;
-  image: string;
-};
-
-const ANNOUNCEMENTS: Announcement[] = [
-  {
-    id: 1,
-    title: "Bureaux fermés",
-    text: "Les bureaux du Consulat Général du Liban à Marseille sont fermés le Lundi 9 Février 2026.",
-    date: "6 Février 2026",
-    time: "09:00",
-    image: AnnonceStMaroun,
-  },
-  {
-    id: 2,
-    title: "Lorem ipsum 2",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    date: "01 Mars 2026",
-    time: "08:30",
-    image: ConsulatBuilding,
-  },
-  {
-    id: 3,
-    title: "Lorem ipsum 3",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    date: "20 Mars 2026",
-    time: "10:00",
-    image: ConsulatBuilding,
-  },
-];
+import { ANNOUNCEMENTS } from "../../../data/announcements";
 
 const AUTO_SLIDE_DELAY = 6000;
 const MAX_CHARS = 140;
+const SWIPE_THRESHOLD = 50;
 
 const AnnonceSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [progressKey, setProgressKey] = useState(0);
+
   const intervalRef = useRef<number | null>(null);
+  const touchStartX = useRef<number | null>(null);
+
   const navigate = useNavigate();
 
-  const startAutoSlide = () => {
-    if (intervalRef.current) {
+  const clearAutoSlide = useCallback(() => {
+    if (intervalRef.current !== null) {
       clearInterval(intervalRef.current);
+      intervalRef.current = null;
     }
+  }, []);
+
+  const startAutoSlide = useCallback(() => {
+    clearAutoSlide();
 
     intervalRef.current = window.setInterval(() => {
-      setCurrentIndex((prev) =>
-        prev === ANNOUNCEMENTS.length - 1 ? 0 : prev + 1,
+      setCurrentIndex((i) =>
+        i === ANNOUNCEMENTS.length - 1 ? 0 : i + 1,
       );
       setProgressKey((k) => k + 1);
     }, AUTO_SLIDE_DELAY);
-  };
+  }, [clearAutoSlide]);
 
   useEffect(() => {
     startAutoSlide();
+    return clearAutoSlide;
+  }, [startAutoSlide, clearAutoSlide]);
 
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
+  const nextSlide = () => {
+    setCurrentIndex((i) => (i + 1) % ANNOUNCEMENTS.length);
+    setProgressKey((k) => k + 1);
+    startAutoSlide();
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((i) =>
+      i === 0 ? ANNOUNCEMENTS.length - 1 : i - 1,
+    );
+    setProgressKey((k) => k + 1);
+    startAutoSlide();
+  };
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+
+    const deltaX =
+      e.changedTouches[0].clientX - touchStartX.current;
+
+    if (Math.abs(deltaX) > SWIPE_THRESHOLD) {
+      if (deltaX > 0) {
+        prevSlide();
+      } else {
+        nextSlide();
       }
-    };
-  }, []);
+    }
+
+    touchStartX.current = null;
+  };
 
   const current = ANNOUNCEMENTS[currentIndex];
   const isLong = current.text.length > MAX_CHARS;
@@ -86,7 +88,6 @@ const AnnonceSlider = () => {
   return (
     <section className="w-full">
       <div className="bg-gray-100 rounded shadow p-6 flex flex-col gap-4">
-        {/* Progress Bars */}
         <SlideProgress
           count={ANNOUNCEMENTS.length}
           activeIndex={currentIndex}
@@ -99,8 +100,21 @@ const AnnonceSlider = () => {
           }}
         />
 
-        {/* Content */}
-        <div className="flex flex-col md:flex-row gap-6 min-h-72">
+        <div
+          className="relative flex flex-col md:flex-row gap-6 min-h-72"
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+        >
+          {/* Prev */}
+          <button
+            onClick={prevSlide}
+            className="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2
+                       bg-white/80 hover:bg-white rounded-full p-2 shadow"
+            aria-label="Annonce précédente"
+          >
+            ‹
+          </button>
+
           {/* Image */}
           <div className="w-full md:w-1/3 h-48 md:h-auto shrink-0">
             <img
@@ -113,9 +127,13 @@ const AnnonceSlider = () => {
           {/* Text */}
           <div className="w-full md:w-2/3 flex flex-col justify-between">
             <div>
-              <h3 className="text-xl font-bold mb-2">{current.title}</h3>
+              <h3 className="text-xl font-bold mb-2">
+                {current.title}
+              </h3>
 
-              <p className="text-sm text-gray-700">{displayText}</p>
+              <p className="text-sm text-gray-700">
+                {displayText}
+              </p>
 
               {isLong && (
                 <button
@@ -131,6 +149,16 @@ const AnnonceSlider = () => {
               {current.date} — {current.time}
             </div>
           </div>
+
+          {/* Next */}
+          <button
+            onClick={nextSlide}
+            className="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2
+                       bg-white/80 hover:bg-white rounded-full p-2 shadow"
+            aria-label="Annonce suivante"
+          >
+            ›
+          </button>
         </div>
       </div>
     </section>
