@@ -1,0 +1,1 @@
+export {default as AnnonceStMaroun} from './annonce-st-maroun.jpg';

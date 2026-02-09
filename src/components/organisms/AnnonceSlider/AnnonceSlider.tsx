@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SlideProgress } from "../../atoms/SlideProgress";
 import { ConsulatBuilding } from "../../../assets/images";
+import { AnnonceStMaroun } from "../../../assets/images/annonces";
 
 type Announcement = {
   id: number;
@@ -15,11 +16,11 @@ type Announcement = {
 const ANNOUNCEMENTS: Announcement[] = [
   {
     id: 1,
-    title: "Lorem ipsum 1",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    date: "12 Février 2026",
+    title: "Bureaux fermés",
+    text: "Les bureaux du Consulat Général du Liban à Marseille sont fermés le Lundi 9 Février 2026.",
+    date: "6 Février 2026",
     time: "09:00",
-    image: ConsulatBuilding,
+    image: AnnonceStMaroun,
   },
   {
     id: 2,
