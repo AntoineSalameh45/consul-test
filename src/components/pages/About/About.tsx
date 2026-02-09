@@ -1,7 +1,8 @@
 import { AnthemTabs } from "../../organisms/AnthemTabs";
 import { ArchiveTabs } from "../../organisms/ArchiveTabs";
 import { HolidaysCalendar } from "../../organisms/HolidaysCalendar";
-import { MapGif } from "../../../assets/images";
+import { MapGif, ConsulMatar } from "../../../assets/images";
+
 
 const departments = [
   "Ain",
@@ -132,17 +133,17 @@ const About = () => {
         className="bg-white min-h-screen flex items-center justify-center pt-20 pb-40 text-black mb-10"
       >
         <div className="container mx-auto px-4 py-12">
-          <h2>Consul Générale Present (2026-):</h2>
+          <h2>Consul Général Present (2026-):</h2>
           <img
-            src="src/assets/images/consul-mattar.jpg"
-            alt="Consul Générale Present"
+            src={ConsulMatar}
+            alt="Consul M. Ralph Matar"
           />
-          <h3>Ralph MATTAR</h3>
+          <h3 className="my-4">M. Ralph MATAR</h3>
           <p className="text-gray-600">
             C’est un honneur et un privilège de rejoindre la formidable équipe
             du Consulat Général du Liban à Marseille en tant que nouveau Consul
             Général.
-            <br />
+            <br /><br />
             Dans la lignée de mes illustres prédécesseurs, je serai à votre
             écoute afin de mieux vous servir dans le cadre des règles fixées par
             la loi et par la réglementation en vigueur. Ma mission consistera à
@@ -150,13 +151,13 @@ const About = () => {
             libanais, qui se reflètent dans la vitalité de sa diaspora,
             illustrée dans tous les secteurs de la société et de l’économie
             française.
-            <br />
+            <br /><br />
             Malgré toutes les tragédies qui ont ébranlé notre cher pays, le
             Liban demeure un précurseur des Lumières, porté par ses penseurs,
             ainsi que par l’espoir et la détermination de son peuple à survivre
             à l’adversité, à surmonter les épreuves et à préserver une capacité
             d’initiative qui ne s’éteint jamais.
-            <br />
+            <br /><br />
             Servons ensemble cette idée du Liban, la seule qui compte.
           </p>
         </div>
