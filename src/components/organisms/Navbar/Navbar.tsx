@@ -5,8 +5,14 @@ import { LebanonFlag } from "../../../assets/images";
 const servicesLinks = [
   { label: "Passeports & Documents", to: "/services/passeports" },
   { label: "État Civil", to: "/services/etat-civil" },
-  { label: "Procuration & Légalisation", to: "/services/procuration-&-legalisation" },
-  { label: "Certificats & Traductions", to: "/services/certificats-&-traductions" },
+  {
+    label: "Procuration & Légalisation",
+    to: "/services/procuration-&-legalisation",
+  },
+  {
+    label: "Certificats & Traductions",
+    to: "/services/certificats-&-traductions",
+  },
 ];
 
 const Navbar = () => {
@@ -38,11 +44,16 @@ const Navbar = () => {
               className="h-14 sm:h-16"
               alt="Lebanon Flag"
             />
-            <div className="text-white font-bold text-sm sm:text-base leading-tight">
-              Consulat Général
-              <br />
-              du Liban &agrave; Marseille
-            </div>
+            <Link
+              to="/"
+              className="text-white font-bold text-sm sm:text-base leading-tight"
+            >
+              <div className="text-white font-bold text-sm sm:text-base leading-tight">
+                Consulat Général
+                <br />
+                du Liban &agrave; Marseille
+              </div>
+            </Link>
           </div>
 
           {/* Desktop Menu */}
