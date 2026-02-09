@@ -139,13 +139,25 @@ const About = () => {
           />
           <h3>Ralph MATTAR</h3>
           <p className="text-gray-600">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam
-            fugiat nulla, adipisci minima temporibus et libero minus. Autem,
-            blanditiis alias at nihil fuga dolorum aperiam aliquam, ducimus eius
-            inventore similique. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Temporibus molestiae numquam id perspiciatis
-            veniam vero eum similique laboriosam dicta blanditiis corrupti unde
-            eveniet sit voluptatum nulla cumque vel, soluta at?
+            C’est un honneur et un privilège de rejoindre la formidable équipe
+            du Consulat Général du Liban à Marseille en tant que nouveau Consul
+            Général.
+            <br />
+            Dans la lignée de mes illustres prédécesseurs, je serai à votre
+            écoute afin de mieux vous servir dans le cadre des règles fixées par
+            la loi et par la réglementation en vigueur. Ma mission consistera à
+            promouvoir la douce puissance du Liban, sa culture et le génie
+            libanais, qui se reflètent dans la vitalité de sa diaspora,
+            illustrée dans tous les secteurs de la société et de l’économie
+            française.
+            <br />
+            Malgré toutes les tragédies qui ont ébranlé notre cher pays, le
+            Liban demeure un précurseur des Lumières, porté par ses penseurs,
+            ainsi que par l’espoir et la détermination de son peuple à survivre
+            à l’adversité, à surmonter les épreuves et à préserver une capacité
+            d’initiative qui ne s’éteint jamais.
+            <br />
+            Servons ensemble cette idée du Liban, la seule qui compte.
           </p>
         </div>
       </section>
